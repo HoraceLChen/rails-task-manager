@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+ a, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.delete_btn {
+  text-decoration: none;
+  color: azure;
+}

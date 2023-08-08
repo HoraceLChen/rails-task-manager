@@ -1,0 +1,26 @@
+<div class= "m-auto w-50">
+  <h1>Task Manager</h1>
+    <% @tasks.each do |task| %>
+    <div class="card mt-3">
+      <div class="card-body">
+        <h2 class="d-flex justify-content-start"><%= task.title %></h2>
+        <p class="d-flex justify-content-between ">
+          <%= link_to("see details", task_path([task.id])) %>
+          <%= link_to("edit", edit_path([task.id])) %>
+        </p>
+          <%= task.completed ?  '<i class="fa-regular fa-circle-check fa-xl" style="color: #0fae12;"></i>'.html_safe : '<i class="fa-regular fa-circle fa-xl"></i>'.html_safe %>
+        <p class="d-flex justify-content-end ">
+          <%=
+          link_to '<i class="fa-solid fa-trash fa-xl"></i>'.html_safe,
+          task_path([task.id]),
+          {:style=>'color:#212529;', data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}}
+          %>
+        </p>
+      </div>
+    </div>
+    <% end %>
+  <button type="button" class="btn btn-success mt-3 ">
+    <%= link_to("Add new task", create_path, {:style=>'color:#FFFFFF;', :class => "text-decoration-none"})%>
+  </button>
+
+</div>

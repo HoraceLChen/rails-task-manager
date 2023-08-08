@@ -1,0 +1,16 @@
+
+<div class= "m-auto w-50">
+<div class="card mt-3">
+  <div class="card-body">
+    <h2><%= @task.title %></h2>
+    <p><%= @task.details %></p>
+    <%= @task.completed ?
+    '<i class="fa-regular fa-circle-check fa-xl" style="color: #0fae12;"></i>'.html_safe :
+    '<i class="fa-regular fa-circle fa-xl"></i>'.html_safe %>
+  </div>
+</div>
+<button type="button" class="btn btn-warning mt-3 ">
+<%= link_to("Back", tasks_path) %>
+</button>
+
+</div>

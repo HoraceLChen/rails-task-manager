@@ -1,0 +1,26 @@
+<div class="d-flex m-auto mt-5 justify-content-center " >
+<div class="card" style="width: 18rem;">
+  <div class="card-header">
+    Task Form
+  </div>
+  <%= form_with model: @task do |f| %>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+      <%= f.label :'Task title' %>
+      <%= f.text_field :title, class: 'form-control' %>
+      </li>
+      <li class="list-group-item">
+          <%= f.label :'Task details' %>
+          <%= f.text_field :details, class: 'form-control' %>
+      </li>
+      <li class="list-group-item">
+        <%= f.check_box :completed, {}, 1, 0 %>
+        <%= f.label :'Complete?' %>
+      </li>
+      <li class="list-group-item">
+        <%= f.submit  class: 'btn btn-primary'%>
+      </li>
+    </ul>
+  <% end %>
+  </div>
+</div>
